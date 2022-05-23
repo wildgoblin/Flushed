@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] bool closed;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        
+        ToggleOpenClose();
+    }
+    public void ToggleOpenClose()
+    {
+        closed = !closed;
+        this.gameObject.SetActive(closed);
     }
 }
