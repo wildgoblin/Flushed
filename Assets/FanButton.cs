@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GateSwitch : MonoBehaviour
+public class FanButton : MonoBehaviour
 {
-    [SerializeField] List<Gate> gates = new List<Gate>();
+    [SerializeField] List<Fan> fans = new List<Fan>();
     [SerializeField] float pressWaitTime;
 
     [SerializeField] Color interactableColor;
     [SerializeField] Color notInteractableColor;
 
-    bool opening;
+    bool fanOff;
 
     //references
     SpriteRenderer spriteRenderer;
@@ -18,47 +18,48 @@ public class GateSwitch : MonoBehaviour
     private void Start()
     {
         //Initialize
-        opening = false;
+        fanOff = false;
 
         //Get References
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    IEnumerator OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.GetComponent<Player>())
         {
-            if(!opening)
+            if (!fanOff)
             {
                 ChangeColor(interactableColor);
             }
-            
-            if (other.GetComponent<InputController>().Interact() && !opening)
+
+            if (other.GetComponent<InputController>().Interact() && !fanOff)
             {
-                opening = true;
+                fanOff = true;
                 ChangeColor(notInteractableColor);
 
-                foreach (Gate gate in gates)
+                foreach (Fan fan in fans)
                 {
-                    gate.ToggleOpenClose();
+                    fan.TurnOffFan();
                 }
 
-                yield return new WaitForSeconds(pressWaitTime);
-                opening = false;
             }
         }
 
     }
 
+
     private void OnTriggerExit2D(Collider2D other)
     {
         // Return to normal sprite color
-        ChangeColor(Color.white); 
+        if (!fanOff)
+        {
+            ChangeColor(Color.white);
+        }
     }
 
     private void ChangeColor(Color color)
     {
         spriteRenderer.color = color;
     }
-
 }
