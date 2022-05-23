@@ -2185,6 +2185,38 @@ PrefabInstance:
       propertyPath: gates.Array.data[2]
       value: 
       objectReference: {fileID: 1932145377}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: interactableColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: interactableColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: interactableColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: interactableColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: notInteractableColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: notInteractableColor.b
+      value: 0.5832681
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: notInteractableColor.g
+      value: 0.5832681
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: notInteractableColor.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
     - target: {fileID: 5650734394524982917, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: m_Name
       value: GateSwitch
@@ -2273,5 +2305,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5650734394524982922, guid: 985489f83f458e24294672612a55e4ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5263182885160829720, guid: 61c441950803de147ad630df4d9170c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 985489f83f458e24294672612a55e4ed, type: 3}

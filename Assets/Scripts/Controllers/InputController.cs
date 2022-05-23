@@ -48,7 +48,7 @@ public class InputController : MonoBehaviour
 
     public  bool Interact()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             return true;
         }
