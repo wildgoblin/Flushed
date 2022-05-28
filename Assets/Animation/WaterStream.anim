@@ -20,11 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 004d87334082f4b4da31ce78ead2ac81, type: 3}
+      value: {fileID: 21300000, guid: 38a8832f33e1dc74f950c5f9c6a1ab8c, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 7b330365c8db89247b3dd6815e484f95, type: 3}
+      value: {fileID: 21300000, guid: 561fa517dfcd35f4a9e16c79ae99f137, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: 004d87334082f4b4da31ce78ead2ac81, type: 3}
+      value: {fileID: 21300000, guid: 60bf9a6c1fce143488586bff157df006, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 38a8832f33e1dc74f950c5f9c6a1ab8c, type: 3}
     attribute: m_Sprite
     path: Water Stream
     classID: 212
@@ -44,15 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 004d87334082f4b4da31ce78ead2ac81, type: 3}
-    - {fileID: 21300000, guid: 7b330365c8db89247b3dd6815e484f95, type: 3}
-    - {fileID: 21300000, guid: 004d87334082f4b4da31ce78ead2ac81, type: 3}
+    - {fileID: 21300000, guid: 38a8832f33e1dc74f950c5f9c6a1ab8c, type: 3}
+    - {fileID: 21300000, guid: 561fa517dfcd35f4a9e16c79ae99f137, type: 3}
+    - {fileID: 21300000, guid: 60bf9a6c1fce143488586bff157df006, type: 3}
+    - {fileID: 21300000, guid: 38a8832f33e1dc74f950c5f9c6a1ab8c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.18333334
+    m_StopTime: 0.26666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

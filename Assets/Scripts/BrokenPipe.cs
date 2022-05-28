@@ -9,12 +9,15 @@ public class BrokenPipe : MonoBehaviour
 
     [SerializeField] int forcePower;
 
+    [SerializeField] AudioClip patchHoleSound;
+
     bool holeIsPatched;
 
     private void Start()
     {
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(true); // Water Steram
+        transform.GetChild(1).gameObject.SetActive(false); //bandaid patch
+        transform.GetChild(2).gameObject.SetActive(true); // Whoosh Lines
         holeIsPatched = false;
     }
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -58,8 +61,18 @@ public class BrokenPipe : MonoBehaviour
     }
     private void PatchHoleWithBandaid()
     {
+        if(patchHoleSound == null)
+        {
+            Debug.Log("Missing AudioClip on " + this);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(patchHoleSound, Camera.main.transform.position);
+        }
+
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(false);
         holeIsPatched = true;
     }
 }

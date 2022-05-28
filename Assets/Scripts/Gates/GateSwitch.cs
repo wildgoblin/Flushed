@@ -10,6 +10,8 @@ public class GateSwitch : MonoBehaviour
     [SerializeField] Color interactableColor;
     [SerializeField] Color notInteractableColor;
 
+    [SerializeField] AudioClip openingGateSound;
+
     bool opening;
 
     //references
@@ -38,16 +40,27 @@ public class GateSwitch : MonoBehaviour
                 opening = true;
                 ChangeColor(notInteractableColor);
 
-                foreach (Gate gate in gates)
-                {
-                    gate.ToggleOpenClose();
-                }
+                AudioSource.PlayClipAtPoint(openingGateSound, Camera.main.transform.position);
+
+                GetComponent<Animator>().SetTrigger("turnWheel");
+
+                StartCoroutine(ToggleGates());
+
 
                 yield return new WaitForSeconds(pressWaitTime);
                 opening = false;
             }
         }
 
+    }
+
+    IEnumerator ToggleGates()
+    {
+        yield return new WaitForSeconds(1);
+        foreach (Gate gate in gates)
+        {
+            gate.ToggleOpenClose();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

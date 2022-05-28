@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
         SetMaxVelocity(maxVelocity);
         rb2D = GetComponent<Rigidbody2D>();
 
+        if(GameManager.instance)
+        {
+            GetComponent<SpriteRenderer>().sprite = GameManager.instance.GetCharacterSprite();
+        }
+
         //Initialize
         floatingAway = false;
         bandaids = 0;

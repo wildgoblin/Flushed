@@ -5,24 +5,31 @@ using UnityEngine;
 public class FanButton : MonoBehaviour
 {
     [SerializeField] List<Fan> fans = new List<Fan>();
+    [SerializeField] Sprite unPressedSprite;
+    [SerializeField] Sprite pressedSprite;
     [SerializeField] float pressWaitTime;
 
     [SerializeField] Color interactableColor;
-    [SerializeField] Color notInteractableColor;
 
     bool fanOff;
 
     //references
     SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
-        //Initialize
-        fanOff = false;
+
 
         //Get References
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //Initialize
+        fanOff = false;
+        spriteRenderer.sprite = unPressedSprite;
+
     }
+
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -36,11 +43,15 @@ public class FanButton : MonoBehaviour
             if (other.GetComponent<InputController>().Interact() && !fanOff)
             {
                 fanOff = true;
-                ChangeColor(notInteractableColor);
+                spriteRenderer.sprite = pressedSprite;
+                ChangeColor(Color.white);
+
+                GetComponent<AudioSource>().Play();
 
                 foreach (Fan fan in fans)
                 {
                     fan.TurnOffFan();
+
                 }
 
             }
@@ -51,11 +62,8 @@ public class FanButton : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Return to normal sprite color
-        if (!fanOff)
-        {
-            ChangeColor(Color.white);
-        }
+        ChangeColor(Color.white);
+
     }
 
     private void ChangeColor(Color color)

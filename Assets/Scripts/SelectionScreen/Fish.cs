@@ -7,6 +7,8 @@ public class Fish : MonoBehaviour
 {
     [SerializeField] Sprite unselectedFish;
     [SerializeField] Sprite selectedFish;
+    [SerializeField] Sprite deadFish;
+    [SerializeField] Sprite characterSprite;
 
     //references
     SpriteRenderer spriteRenderer;
@@ -31,4 +33,20 @@ public class Fish : MonoBehaviour
     {
         spriteRenderer.sprite = unselectedFish;
     }
+
+    public void ChangeToDeadFish()
+    {
+        spriteRenderer.sprite = deadFish;
+    }
+
+    public void StartCutscene()
+    {
+        transform.parent.GetComponent<FishAi>().StartCutscene();
+    }
+
+    public Sprite GetCharacterSprite()
+    {
+        return characterSprite;
+    }
+    
 }

@@ -12,9 +12,14 @@ namespace FISH.SelectionScreen
 
         int fishIndex;
 
+        bool inputEnabled;
+
+
         private void Start()
         {
+
             DefaultSelection();
+            inputEnabled = true;
         }
 
         private void Update()
@@ -25,46 +30,53 @@ namespace FISH.SelectionScreen
 
         private void InputSelectFish()
         {
-            
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (inputEnabled)
             {
-                UnselectFish();
-
-                if (fishIndex == fish.Count - 1)
+                if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    fishIndex = 0;
-                    selectedFish = fish[fishIndex];
-                }
-                else
-                {
-                    fishIndex += 1;
-                    selectedFish = fish[fishIndex];
-                    
+                    UnselectFish();
+
+                    if (fishIndex == fish.Count - 1)
+                    {
+                        fishIndex = 0;
+                        selectedFish = fish[fishIndex];
+                    }
+                    else
+                    {
+                        fishIndex += 1;
+                        selectedFish = fish[fishIndex];
+                    }
+
+                    SelectFish();
                 }
 
-                SelectFish();
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    UnselectFish();
+
+                    if (fishIndex == 0)
+                    {
+                        fishIndex = fish.Count - 1;
+                        selectedFish = fish[fishIndex];
+                    }
+                    else
+                    {
+                        fishIndex -= 1;
+                        selectedFish = fish[fishIndex];
+
+                    }
+
+                    SelectFish();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    inputEnabled = false;
+                    GameManager.instance.SetCharacterSprite(selectedFish.GetCharacterSprite());
+                    selectedFish.StartCutscene();
+                }
             }
-
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                UnselectFish();
-
-                if (fishIndex == 0)
-                {
-                    fishIndex = fish.Count - 1;
-                    selectedFish = fish[fishIndex];
-                }
-                else
-                {
-                    fishIndex -= 1;
-                    selectedFish = fish[fishIndex];
-                    
-                }
-
-                SelectFish();
-            }
-
             
         }
 
