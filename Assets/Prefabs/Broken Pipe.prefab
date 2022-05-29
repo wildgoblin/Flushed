@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterDirection: 2
   forcePower: 2
+  patchHoleSound: {fileID: 8300000, guid: 43d43d576991cdf42b22680c94f8dd64, type: 3}
+  deathSFX: {fileID: 8300000, guid: a01f48b0dee43364b9ee4aaa14e7d67c, type: 3}
 --- !u!95 &5343798250787753899
 Animator:
   serializedVersion: 3

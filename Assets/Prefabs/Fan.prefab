@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7552130699470294828}
   - component: {fileID: 7552130699470294830}
   - component: {fileID: 7552130699470294829}
+  - component: {fileID: 7128015912557622999}
   m_Layer: 0
   m_Name: Fan
   m_TagString: Untagged
@@ -45,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886b4a58c563da6439cc865a7aa71f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanPushPower: 10
+  fanPushPower: 1000
+  defaultSprite: {fileID: 0}
 --- !u!212 &7552130699470294829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97,6 +99,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7128015912557622999
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552130699470294867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 248089bc9fc25c646b9ee8ef63d63002, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6295113750814523371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 4580779029088788637, guid: cbf7d2b1c25d7a14cb93c2d0612591fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580779029088788638, guid: cbf7d2b1c25d7a14cb93c2d0612591fe, type: 3}
+      propertyPath: ForceModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbf7d2b1c25d7a14cb93c2d0612591fe, type: 3}

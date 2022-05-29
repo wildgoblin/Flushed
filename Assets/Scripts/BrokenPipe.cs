@@ -10,6 +10,7 @@ public class BrokenPipe : MonoBehaviour
     [SerializeField] int forcePower;
 
     [SerializeField] AudioClip patchHoleSound;
+    [SerializeField] AudioClip deathSFX;
 
     bool holeIsPatched;
 
@@ -55,7 +56,18 @@ public class BrokenPipe : MonoBehaviour
                     default:
                         break;
                 }
-            }            
+
+                StartCoroutine(WaitThenReloadScene());
+            } 
+            
+            
+
+            IEnumerator WaitThenReloadScene()
+            {
+                AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position);
+                yield return new WaitForSeconds(2);
+                GameManager.instance.ReloadScreen();
+            }
             //WaitForSeconds and restart
         }
     }

@@ -10,7 +10,7 @@ public class Fan : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
     }
     public void TurnOffFan()
     {
@@ -23,7 +23,7 @@ public class Fan : MonoBehaviour
         }
         else
         {
-            GetComponent<AudioSource>().Stop();
+            //GetComponent<AudioSource>().Stop();
             GetComponent<SpriteRenderer>().sprite = defaultSprite;
         }
         

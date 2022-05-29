@@ -21,7 +21,11 @@ public class Player : MonoBehaviour
 
         if(GameManager.instance)
         {
-            GetComponent<SpriteRenderer>().sprite = GameManager.instance.GetCharacterSprite();
+            if(GameManager.instance.GetCharacterSprite() != null)
+            {
+                GetComponent<SpriteRenderer>().sprite = GameManager.instance.GetCharacterSprite();
+            }
+           
         }
 
         //Initialize
@@ -49,6 +53,13 @@ public class Player : MonoBehaviour
         rb2D.AddForce(direction * (multipler * speed));
     }
 
+    public void PushedByFan(Vector2 direction, float multiplier)
+    {
+        DisableCollider();
+        DisableInput();
+        rb2D.velocity = Vector2.zero;
+        rb2D.AddForce(direction * (multiplier * speed));
+    }
     public void DisableCollider()
     {
         GetComponent<BoxCollider2D>().enabled = false;
@@ -99,6 +110,12 @@ public class Player : MonoBehaviour
               // direction of the vector, only its magnitude.
                 rb2D.velocity = v.normalized * maxVelocity;
             }
+        }
+
+        if(floatingAway)
+        {
+            int _rotationSpeed = 90;
+            transform.Rotate(0,0, _rotationSpeed * Time.deltaTime, Space.World);
         }
     }
 }
