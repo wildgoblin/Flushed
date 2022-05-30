@@ -382,8 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish:
   - {fileID: 592007125}
-  - {fileID: 634675434}
   - {fileID: 1766534263}
+  - {fileID: 634675434}
   fishParent: {fileID: 1010039434}
 --- !u!1 &1010039434
 GameObject:
