@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    int fishCharacterSeleectIndex = 99; // TODO Fix. Hacky was to avoid disabling fish 0 on first game start. 
+
     private Sprite characterSprite;
     void Awake()
     {
@@ -40,12 +42,32 @@ public class GameManager : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int activeScene = SceneManager.GetActiveScene().buildIndex;
+        if(activeScene == 11) // Level 10
+        {
+            MusicManager.instance.GetComponent<AudioSource>().Stop();
+        }
+        SceneManager.LoadScene(activeScene + 1);
     }
 
    public void ReloadScreen()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadCharacterSelectScene()
+    {
+        SceneManager.LoadScene(1); // Character Select
+    }
+
+    public void UpdateFishCharacterSelectIndex(int index)
+    {
+        fishCharacterSeleectIndex = index;
+    }
+
+    public int GetFishCharacterSelectIndex()
+    {
+        return fishCharacterSeleectIndex;
     }
 
 

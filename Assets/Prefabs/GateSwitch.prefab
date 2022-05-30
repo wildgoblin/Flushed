@@ -56,7 +56,8 @@ MonoBehaviour:
   pressWaitTime: 1
   interactableColor: {r: 0.3517357, g: 1, b: 0, a: 1}
   notInteractableColor: {r: 0.5188679, g: 0.48656106, b: 0.48656106, a: 1}
-  openingGateSound: {fileID: 8300000, guid: c2224c49c7c235442b35519edd3e4fe8, type: 3}
+  turningWheelSFX: {fileID: 8300000, guid: c2224c49c7c235442b35519edd3e4fe8, type: 3}
+  togglingGateSFX: {fileID: 8300000, guid: f741b339c820c5244bc7c94cc3050956, type: 3}
 --- !u!212 &5650734394524982922
 SpriteRenderer:
   m_ObjectHideFlags: 0

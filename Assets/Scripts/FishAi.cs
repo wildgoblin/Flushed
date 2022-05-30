@@ -10,6 +10,7 @@ public class FishAi : MonoBehaviour
     [SerializeField] float speed = 1;
 
     [SerializeField] Fish fish;
+    [SerializeField] int characterIndex;
 
 
     Vector3 destination;
@@ -126,12 +127,15 @@ public class FishAi : MonoBehaviour
             //Play clip over to next scene
             audioOnGameManager.clip = toiletFlushSound;
             audioOnGameManager.Play();
-            
+
+            GameManager.instance.UpdateFishCharacterSelectIndex(characterIndex);
+
             StartCoroutine(LoadNextScene());
         }
 
         IEnumerator LoadNextScene()
         {
+            
             yield return new WaitForSeconds(5);
             
             GameManager.instance.NextScene();

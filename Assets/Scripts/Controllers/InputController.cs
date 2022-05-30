@@ -27,16 +27,19 @@ public class InputController : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow ) )
         {
             player.MoveByForce(transform.up, -1);
+
         }
 
         if (Input.GetKey(KeyCode.RightArrow) )
         {
             player.MoveByForce(transform.right, 1);
+            player.FaceRight();
         }
 
         if (Input.GetKey(KeyCode.LeftArrow) )
         {
             player.MoveByForce(transform.right, -1);
+            player.FaceLeft();
         }         
 
         else 

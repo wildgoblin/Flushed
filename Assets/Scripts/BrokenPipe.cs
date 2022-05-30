@@ -30,10 +30,11 @@ public class BrokenPipe : MonoBehaviour
         {
             Player player = otherCollider.GetComponent<Player>();
 
-            if (player.GetBandaidCount() >= 1)
+            if (player.GetBandaidCount() >= 1 && !holeIsPatched)
             {
                 player.RemoveBandaid();
                 PatchHoleWithBandaid();
+                
             }
 
             else if(!holeIsPatched)

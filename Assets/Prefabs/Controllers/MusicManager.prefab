@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aquariumMusic: {fileID: 8300000, guid: c6d97468457bd484a860f321251e7b6b, type: 3}
   mainGameMusic: {fileID: 8300000, guid: 1929ec78b0db0f046b6b8b316462c600, type: 3}
-  endScreenMusic: {fileID: 0}
+  endScreenMusic: {fileID: 8300000, guid: ad48c73444f3b0245ba19cc602369209, type: 3}
 --- !u!82 &3751994661900359357
 AudioSource:
   m_ObjectHideFlags: 0

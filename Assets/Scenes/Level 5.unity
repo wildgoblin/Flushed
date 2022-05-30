@@ -334,6 +334,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2945676964935772368}
     m_Modifications:
     - target: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
+      propertyPath: open
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
       propertyPath: closed
       value: 1
       objectReference: {fileID: 0}
@@ -485,6 +489,17 @@ Transform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
   m_PrefabInstance: {fileID: 4649549248100384795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb810aee65b3be54091ea4cb2bbc13fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1548947306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
+  m_PrefabInstance: {fileID: 1258448051}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -16038,6 +16053,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4649549247953515301}
     m_Modifications:
     - target: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
+      propertyPath: open
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
       propertyPath: closed
       value: 0
       objectReference: {fileID: 0}
@@ -16816,7 +16835,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c2224c49c7c235442b35519edd3e4fe8, type: 3}
     - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: gates.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: openingGateSound
@@ -16833,7 +16852,7 @@ PrefabInstance:
     - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: gates.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1548947306}
     - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: interactableColor.a
       value: 1
@@ -16981,7 +17000,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c2224c49c7c235442b35519edd3e4fe8, type: 3}
     - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: gates.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5650734394524982916, guid: 985489f83f458e24294672612a55e4ed, type: 3}
       propertyPath: openingGateSound
@@ -17333,6 +17352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4649549247953515301}
     m_Modifications:
+    - target: {fileID: 3337662382552564516, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
+      propertyPath: open
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3337662382552564519, guid: 2a82e461ff45be948b39bbd095093206, type: 3}
       propertyPath: m_RootOrder
       value: 1

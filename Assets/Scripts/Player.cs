@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         bandaids = 0;
         
     }
+
+
     public void SetMaxVelocity(float maxVelocity)
     {
         this.maxVelocity = maxVelocity;
@@ -42,6 +44,20 @@ public class Player : MonoBehaviour
     public void MoveByForce(Vector2 direction, int multiplier)
     {
         rb2D.AddForce(direction * (multiplier * speed));
+    }
+
+
+    //ASSUMES SPRITE FACES LEFT
+    public void FaceRight()
+    {
+        GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+
+    //ASSUMES SPRITE FACES LEFT
+    public void FaceLeft()
+    {
+        GetComponent<SpriteRenderer>().flipX = false;
     }
 
     public void DeathByBrokenPipe(Vector2 direction, float multipler)

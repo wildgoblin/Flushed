@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace FISH.SelectionScreen
     public class FishSelection : MonoBehaviour
     {
         [SerializeField] List<Fish> fish = new List<Fish>();
+
+        [SerializeField] GameObject fishParent;
 
         Fish selectedFish;
 
@@ -18,8 +21,36 @@ namespace FISH.SelectionScreen
         private void Start()
         {
 
+            RemoveDeadFish();
+            AddFishToList();
             DefaultSelection();
             inputEnabled = true;
+
+            
+        }
+
+        private void RemoveDeadFish()
+        {
+
+            for (int i = 0; i < fishParent.transform.childCount; i++)
+            {
+
+                if (i == GameManager.instance.GetFishCharacterSelectIndex())
+                {
+                    fish.Remove(fish[i]);
+                    Destroy(fishParent.transform.GetChild(i).gameObject);
+
+                }
+            }
+
+        }
+
+        private void AddFishToList()
+        {
+            foreach (Transform fishy in fishParent.transform)
+            {
+                fish.Add(fishy.transform.GetChild(0).GetComponent<Fish>());
+            }
         }
 
         private void Update()
@@ -102,6 +133,7 @@ namespace FISH.SelectionScreen
         {
             selectedFish.ChangeToUnselectedFish();
         }
+
     }
 
 

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] bool closed;
+    [SerializeField] bool open;
+    
 
 
     private void Start()
@@ -13,7 +14,8 @@ public class Gate : MonoBehaviour
     }
     public void ToggleOpenClose()
     {
-        closed = !closed;
-        this.gameObject.SetActive(closed);
+        open = !open;
+        
+        this.gameObject.SetActive(open);
     }
 }
